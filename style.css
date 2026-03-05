@@ -1,0 +1,325 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #000;
+    color: #ddd;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Фон с размытым изображением и параллаксом */
+.site-wrapper {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Изображение фона */
+    background: url('wallpaper.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    /* Плавность движения фона */
+    transition: background-position 0.1s ease-out;
+    z-index: 1;
+}
+
+
+/* Контент поверх фона */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Хедер (Заголовок сайта) */
+.header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* Градиент для заголовка */
+.title {
+    font-size: 4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    background: linear-gradient(to bottom, #ffffff 0%, #ff0000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5));
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #ffcccc;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+}
+
+/* Заголовки разделов */
+h2, h3 {
+    color: #f0f0f0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+/* Секции */
+section {
+    margin-bottom: 50px;
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Лор стиль */
+.lore p {
+    margin-bottom: 15px;
+}
+.lore ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* Описание */
+.description p {
+    margin-bottom: 15px;
+}
+
+/* Стили для списка модов */
+.mods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.mod-item {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #444;
+}
+
+.mod-item h3 {
+    color: #ffcccc;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #666;
+    margin-bottom: 10px;
+}
+
+/* Интерактивное сравнение */
+.comparison-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    user-select: none;
+    cursor: col-resize;
+    border: 2px solid #444;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.comparison-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.comparison-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.comparison-before {
+    z-index: 1;
+}
+
+.comparison-after {
+    z-index: 2;
+    border-right: 2px solid #fff;
+    overflow: hidden;
+}
+
+.comparison-after img {
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.comparison-divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: white;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    z-index: 3;
+    cursor: col-resize;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+/* Галерея шейдеров */
+.shader-gallery {
+    margin-top: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #444;
+    transition: transform 0.2s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+    border-color: #888;
+}
+
+/* Скриншоты сборки */
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.screenshot-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #444;
+    transition: opacity 0.2s;
+}
+
+.screenshot-grid img:hover {
+    opacity: 0.9;
+}
+
+/* Предупреждение */
+.warning {
+    background: rgba(180, 0, 0, 0.2);
+    border-left: 4px solid #b00;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 4px;
+}
+
+
+
+
+/* Стили для контейнера скачивания */
+.download {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Создаем гибкий контейнер для кнопок */
+.download-links {
+    display: flex;
+    flex-direction: column; /* Кнопки друг под другом */
+    gap: 20px; /* ОТСТУП МЕЖДУ КНОПКАМИ И ПОДПИСЯМИ */
+    align-items: center; /* Центрируем кнопки */
+    margin-bottom: 30px;
+}
+
+/* Стили для каждой кнопки */
+.download-btn {
+    display: inline-block;
+    background: #2a6f4c;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(42, 111, 76, 0.3);
+    width: auto; /* Чтобы кнопка не растягивалась на всю ширину */
+    max-width: 400px; /* Ограничим ширину */
+}
+
+.download-btn:hover {
+    background: #1e8b5e;
+    transform: scale(1.02);
+}
+
+.download-note {
+    margin-top: -10px; /* Подтягиваем текст к кнопке */
+    margin-bottom: 10px;
+    color: #aaa;
+    font-size: 0.9rem;
+    max-width: 600px; /* Чтобы текст не был слишком широким */
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Автор */
+.author a {
+    color: #4aa3ff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-bottom: 1px dashed #4aa3ff;
+}
+
+.author a:hover {
+    color: #8fc9ff;
+    border-bottom-style: solid;
+}
+
+/* Футер */
+.footer {
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #777;
+    border-top: 1px solid #333;
+    margin-top: 40px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .comparison-container {
+        max-width: 100%;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    section {
+        padding: 15px;
+    }
+}
